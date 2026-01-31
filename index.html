@@ -1,5 +1,72 @@
-<h1>Pensamientas</h1>
-<h2>Herramientas del Pensamiento</h2>
+<!doctype html>
+<html lang="es-AR">
+<head>
+    <meta charset="utf-8" />
+    <title>Pensamientas</title>
+    <style>
+        #overlay-container {
+            position: relative;
+            display: inline-block;
+        }
 
+        #spacer { visibility: hidden; }
 
-<img src=destornillador.png />
+        /* 
+           El truco de los gradientes es aplicarlo al fondo
+           y usar el texto como una ventana
+           IMPORTANTE:
+           Increíblemente, el orden de las propiedades ¡IMPORTA!
+        */
+
+        #top { /* PENSAMIENTOS */
+            background: linear-gradient(to right,
+                                        oklch(0.72 0.16 0 / 100%) 0%,
+                                        oklch(0.72 0.16 0 / 25%) 100%
+                                        );
+        }
+
+        #bottom { /* HERRAMIENTAS */
+            background: linear-gradient(to right,
+                                        oklch(0.68 0.16 180 / 25%) 0%,
+                                        oklch(0.68 0.16 180 / 100%) 100%
+                                        );
+        }
+
+        #bottom, #top {
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        body {
+            font-family: monospace;
+            background: oklch(0.85 0.08 90);
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <div id=overlay-container>
+            <span id=spacer >ZZZZZZZZZZZZ</span>
+            <span id=bottom >HERRAMIENTAS</span>
+            <span id=top    >PENSAMIENTOS</span>
+        </div>
+    </h1>
+
+    <h2 style="color: oklch(0.52 0.16 270 / 10%)">Herramientas del Pensamiento</h2>
+
+    <img
+        src=destornillador.png
+        alt="Mano humana destornillador tornillo"
+        style="max-width: 100%"
+    />
+</body>
+</html>
